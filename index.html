@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Make 10 – Loja de Preço Único</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+:root{--pink:#e6007e;--bg:#fff;--text:#1b1b1b;--muted:#777;--line:#eaeaea;--soft:#fff0f7;--ph:#ffe3f1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141014;--text:#f5eef2;--muted:#b09aa8;--line:#332633;--soft:#2a1524;--ph:#3a1730}}
+:root[data-theme="dark"]{--bg:#141014;--text:#f5eef2;--muted:#b09aa8;--line:#332633;--soft:#2a1524;--ph:#3a1730}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}
+button{font-family:inherit}
+.mqw{background:#000;color:#fff;overflow:hidden;font-size:12px;font-weight:500;padding:10px 0;white-space:nowrap}
+.mq{display:flex;width:max-content;animation:m 30s linear infinite}
+.mq span{padding:0 28px}
+@keyframes m{to{transform:translateX(-50%)}}
+.w{max-width:1200px;margin:0 auto;padding:0 16px}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:22px 16px}
+.search{display:flex;max-width:350px}
+.search input{flex:1;min-width:0;border:1px solid var(--line);border-right:0;background:var(--bg);color:var(--text);padding:12px;border-radius:4px 0 0 4px;font-family:inherit}
+.search button{border:1px solid var(--line);background:var(--line);color:var(--text);padding:0 14px;border-radius:0 4px 4px 0;cursor:pointer}
+.logo{width:64px;height:64px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;line-height:1.1;text-align:center;text-decoration:none}
+.acts{display:flex;justify-content:flex-end;gap:18px;align-items:center}
+.acts a,.cartb{color:var(--text);text-decoration:none;font-size:12px;line-height:1.4;background:none;border:0;cursor:pointer;text-align:left;font-family:inherit}
+.acts b{display:block;font-size:13px}
+nav{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+nav .w{display:flex;gap:26px;overflow-x:auto;justify-content:center;padding-top:18px;padding-bottom:18px}
+nav a{color:var(--text);text-decoration:none;font-size:12px;text-transform:uppercase;white-space:nowrap;cursor:pointer}
+nav a:hover{color:var(--pink)}
+.hero{position:relative;height:clamp(240px,42vw,460px);overflow:hidden;color:#fff}
+.sl{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 max(24px,8vw);opacity:0;transition:opacity .6s;background:linear-gradient(120deg,#e6007e,#ff6db8)}
+.sl.on{opacity:1}
+.sl:nth-child(2){background:linear-gradient(120deg,#b0005e,#e6007e)}
+.sl:nth-child(3){background:linear-gradient(120deg,#ff4fa3,#ffa1cf)}
+.sl small{font-size:clamp(13px,2vw,20px);font-weight:300;letter-spacing:2px;text-transform:uppercase}
+.sl h1{margin:6px 0 16px;font-size:clamp(30px,6vw,64px);font-weight:700;line-height:1.05}
+.sl a{align-self:flex-start;background:#fff;color:var(--pink);padding:10px 22px;border-radius:4px;font-weight:600;text-decoration:none;cursor:pointer}
+.har{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:30px;cursor:pointer;padding:12px}
+.cats{display:flex;gap:26px;overflow-x:auto;padding:36px 16px 8px;max-width:1200px;margin:0 auto}
+.cat{display:flex;align-items:center;gap:12px;flex:none;cursor:pointer;font-size:16px;background:none;border:0;color:var(--text);font-family:inherit}
+.cat i{width:64px;height:64px;border-radius:50%;background:var(--ph);display:grid;place-items:center;font-size:30px;font-style:normal}
+section.s{max-width:1200px;margin:0 auto;padding:36px 16px 0}
+section.s h2{font-weight:400;font-size:26px;margin:0 0 18px}
+.car{position:relative}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.ar{position:absolute;top:35%;z-index:2;background:var(--bg);border:1px solid var(--line);color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer}
+.ar.l{left:-10px}.ar.r{right:-10px}
+.p{flex:0 0 min(240px,62vw);scroll-snap-align:start;display:flex;flex-direction:column}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.g .p{flex:auto}
+.ph{aspect-ratio:3/4;background:var(--ph);display:grid;place-items:center;font-size:64px}
+.ph img{width:100%;height:100%;object-fit:cover}
+.p .n{margin:12px 0 10px;font-weight:300;font-size:14px}
+.p .pr{font-weight:700;font-size:17px}
+.p small{color:var(--muted);font-size:11px;margin:2px 0 10px}
+.p button{align-self:flex-start;background:var(--pink);color:#fff;border:0;border-radius:4px;padding:8px 20px;font-weight:600;cursor:pointer}
+footer{background:#000;color:#fff;margin-top:64px;padding:44px 0 28px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.fg a{color:#fff;text-decoration:none;display:block;margin-bottom:12px;cursor:pointer}
+.fg p{margin:0 0 12px}
+.fg .logo{margin-bottom:20px}
+.fg h4{margin:0 0 12px;font-size:13px}
+.cp{margin-top:36px;color:#aaa;font-size:12px}
+.wpp{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:48px;height:48px;border-radius:50%;background:#25d366;display:grid;place-items:center;font-size:24px;text-decoration:none;z-index:8}
+.ov{position:fixed;inset:0;background:#0007;display:none;z-index:9}
+.ov.open{display:block}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--bg);display:flex;flex-direction:column;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.items{flex:1;overflow:auto}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.q button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--soft);color:var(--text);cursor:pointer}
+.q span{display:inline-block;min-width:24px;text-align:center}
+.tot{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin:14px 0}
+.wa{background:#25d366;color:#fff;border:0;border-radius:6px;padding:14px;font-weight:700;font-size:15px;cursor:pointer}
+.x{align-self:flex-end;background:none;border:0;font-size:26px;color:var(--text);cursor:pointer}
+@media(max-width:720px){.top{grid-template-columns:1fr auto}.search{grid-column:1/-1;order:3;max-width:none}.acts a{display:none}.fg{grid-template-columns:1fr}nav .w{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<div class="mqw"><div class="mq" id="mq"></div></div>
+<div class="top w">
+  <div class="search"><input id="q" placeholder="O que você está buscando?" oninput="render()"><button aria-label="Buscar">🔍</button></div>
+  <a class="logo" href="#">MAKE<br>10</a>
+  <div class="acts"><a href="https://wa.me/5511915315808"><b>Fale conosco</b>WhatsApp</a><button class="cartb" onclick="openCart()"><b>Carrinho (<span id="cnt">0</span>)</b><span id="sub">R$ 0,00</span></button></div>
+</div>
+<nav><div class="w" id="nav"></div></nav>
+<div class="hero" id="hero"></div>
+<div class="cats" id="cats"></div>
+<div id="secs"></div>
+
+<footer><div class="w"><div class="fg">
+  <div><div class="logo">MAKE<br>10</div>
+    <a href="https://www.instagram.com/make10loja">📷 @make10loja</a>
+    <p>WhatsApp: (11) 91531-5808</p>
+    <p>Av. Gen. Barreto de Menezes, 357 – Ferrazópolis, São Bernardo do Campo – SP</p>
+    <p>Seg. a sáb., 9h às 19h</p></div>
+  <div id="flinks"></div>
+  <div><h4>ONDE ESTAMOS</h4><a href="https://maps.app.goo.gl/ydN91VJRE7w3b7x5A">Ver no Google Maps</a><a href="https://wa.me/5511915315808">Receba novidades e promoções no WhatsApp</a></div>
+</div><div class="cp">© Make 10 – Loja de Preço Único. Todos os direitos reservados.</div></div></footer>
+<a class="wpp" href="https://wa.me/5511915315808" aria-label="WhatsApp">💬</a>
+
+<div class="ov" id="ov" onclick="if(event.target===this)closeCart()"><aside>
+  <button class="x" onclick="closeCart()">×</button><h3 style="margin-top:0">Seu pedido</h3>
+  <div class="items" id="items"></div>
+  <div class="tot"><span>Total</span><span id="total">R$ 0,00</span></div>
+  <button class="wa" onclick="checkout()">Finalizar pelo WhatsApp</button>
+</aside></div>
+
+<script>
+const PRICE=10,WA="5511915315808";
+// Foto real: preencha img (data: URI ou caminho). Ex.: img:"fotos/scandalus.jpg"
+const P=[
+["Body Splash Scandalus","Body splash","🌸"],["Body Splash Coco Lady","Body splash","🥥"],["Body Splash Obsessão","Body splash","💖"],["Body Splash Sohai","Body splash","🍓"],
+["Sérum Peptídeos Dermachem","Skin care","💧"],["Primer 3 em 1 Love","Maquiagem","✨"],["Gloss Big Lip Face Beautiful","Maquiagem","💋"],["Rímel Expert 4D","Maquiagem","👁️"],["Cílios postiços","Maquiagem","🪽"],["Batom","Maquiagem","💄"],
+["Hidratante Labotrat Maracujá","Corpo e higiene","🍈"],["Hidratante Labotrat Pitaya","Corpo e higiene","🐉"],["Hidratante Labotrat Cereja","Corpo e higiene","🍒"],["Sabonete Íntimo Ba Ba Bell Tutti Frutti","Corpo e higiene","🧼"],
+["Lenço","Acessórios","🧣"],["Brincos e pulseiras","Acessórios","📿"],["Faixas e xuxinhas de cabelo","Acessórios","🎀"]
+].map((p,i)=>({id:i,name:p[0],cat:p[1],emoji:p[2],img:""}));
+const cats=[...new Set(P.map(p=>p.cat))], icon={};P.forEach(p=>icon[p.cat]=icon[p.cat]||p.emoji);
+const S=[["Preço único","Tudo por R$ 10,00","Body splash"],["Fragrâncias que combinam com você","Body splash R$ 10","Body splash"],["Beleza e cuidado sem pesar no bolso","Skin care e maquiagem","Maquiagem"]];
+const money=v=>"R$ "+v.toFixed(2).replace(".",",");
+let cart={},si=0;
+mq.innerHTML=Array(12).fill('<span>TUDO POR R$ 10,00</span><span>PREÇO ÚNICO</span><span>PEDIDOS PELO WHATSAPP</span>').join("");
+nav.innerHTML=`<a onclick="go('')">Produtos</a>`+cats.map(c=>`<a onclick="go('${c}')">${c}</a>`).join("")+`<a href="#footer" onclick="document.querySelector('footer').scrollIntoView()">Onde estamos</a>`;
+flinks.innerHTML=`<h4>CATEGORIAS</h4>`+cats.map(c=>`<a onclick="go('${c}')">${c}</a>`).join("");
+</script>
+<script>
+document.getElementById("cats").innerHTML=cats.map(c=>`<button class="cat" onclick="go('${c}')"><i>${icon[c]}</i>${c}</button>`).join("");
+function card(p){return `<div class="p"><div class="ph">${p.img?`<img src="${p.img}" alt="${p.name}">`:p.emoji}</div><div class="n">${p.name}</div><div class="pr">${money(PRICE)}</div><small>Preço único</small><button onclick="add(${p.id})">Comprar</button></div>`}
+function render(){
+  const t=q.value.trim().toLowerCase();
+  if(t){const r=P.filter(p=>(p.name+p.cat).toLowerCase().includes(t));secs.innerHTML=`<section class="s"><h2>Resultados para "${q.value}"</h2>${r.length?`<div class="g">${r.map(card).join("")}</div>`:"<p>Nenhum produto encontrado.</p>"}</section>`;return}
+  secs.innerHTML=cats.map((c,i)=>`<section class="s" id="c${i}"><h2>${c}</h2><div class="car"><button class="ar l" onclick="sc(this,-1)">←</button><div class="track">${P.filter(p=>p.cat===c).map(card).join("")}</div><button class="ar r" onclick="sc(this,1)">→</button></div></section>`).join("");
+}
+function sc(b,d){b.parentElement.querySelector(".track").scrollBy({left:d*500,behavior:"smooth"})}
+function go(c){q.value="";render();const i=cats.indexOf(c);(i<0?document.getElementById("cats"):document.getElementById("c"+i)).scrollIntoView()}
+function hero(){hero_.innerHTML=""}
+const hero_=document.getElementById("hero");
+hero_.innerHTML=S.map((s,i)=>`<div class="sl ${i?"":"on"}"><small>${s[0]}</small><h1>${s[1]}</h1><a onclick="go('${s[2]}')">Ver produtos</a></div>`).join("")+`<button class="har" style="left:8px" onclick="sl(-1)">←</button><button class="har" style="right:8px" onclick="sl(1)">→</button>`;
+function sl(d){const a=hero_.querySelectorAll(".sl");a[si].classList.remove("on");si=(si+d+a.length)%a.length;a[si].classList.add("on")}
+setInterval(()=>sl(1),5000);
+function add(id){cart[id]=(cart[id]||0)+1;upd()}
+function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];upd()}
+function upd(){const ids=Object.keys(cart),n=ids.reduce((s,i)=>s+cart[i],0);cnt.textContent=n;sub.textContent=total.textContent=money(n*PRICE);
+  items.innerHTML=ids.length?ids.map(i=>`<div class="row"><span>${P[i].name}</span><span class="q"><button onclick="chg(${i},-1)">−</button><span>${cart[i]}</span><button onclick="chg(${i},1)">+</button></span></div>`).join(""):'<p style="color:var(--muted)">Seu carrinho está vazio.</p>'}
+function openCart(){ov.classList.add("open")}
+function closeCart(){ov.classList.remove("open")}
+function checkout(){const ids=Object.keys(cart);if(!ids.length)return;const n=ids.reduce((s,i)=>s+cart[i],0);
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent("Olá, Make 10! Quero fazer um pedido:\n"+ids.map(i=>`• ${cart[i]}x ${P[i].name}`).join("\n")+`\n\nTotal: ${money(n*PRICE)}`),"_blank")}
+render();upd();
+</script>
+</body>
+</html>
